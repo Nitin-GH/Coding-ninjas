@@ -1,2 +1,2 @@
-*.C linguist-language=C++
-*.H linguist-language=C++
+* linguist-language=Java
+* linguist-language=Java
