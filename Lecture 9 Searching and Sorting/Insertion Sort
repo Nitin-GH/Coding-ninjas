@@ -1,0 +1,83 @@
+Code Insertion Sort
+
+Given a random integer array. Sort this array using insertion sort.
+Change in the input array itself. You don't need to return or print elements.
+Input format :
+
+Line 1 : Integer N, Array Size
+Line 2 : Array elements (separated by space)
+
+Constraints :
+1 <= N <= 10^3
+Sample Input 1:
+
+7
+2 13 4 1 3 6 28
+
+Sample Output 1:
+
+1 2 3 4 6 13 28
+
+Sample Input 2:
+
+5
+9 3 6 2 0
+
+Sample Output 2:
+
+0 2 3 6 9
+
+___________________________________________________________________________________________________________
+
+import java.util.Scanner;
+public class InsertionSort {	
+	//arr is the input array you have to sort
+	public static void insertionSort(int[] arr){
+		//write your code here
+        int start=1;
+		int end=arr.length-1;
+		int temp;
+		while(start<=end)
+		{
+			int i=start-1;
+			temp=arr[start];
+			while(i>=0 && arr[i]>temp)
+			{
+				arr[i+1]=arr[i];
+				i-=1;
+			}
+			arr[i+1]=temp;
+			start+=1;
+		}
+		
+		
+	}
+	public static void printArray(int input[])
+	{
+		for(int i=0;i<input.length;i++)
+		{
+			System.out.print(input[i]+" ");
+		}
+	}
+	public static int[] takeInput(){//fuction return integer array
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int input[] = new int[n];
+		for(int i=0;i<n;i++)
+		{
+			//System.out.println(b[5]);//going out of range.
+			input[i]=s.nextInt();
+			//System.out.println(input[i]);
+		}
+		return input;
+	}
+	public static void main(String[] args) {
+		
+		int b[] =takeInput();
+		
+		insertionSort(b);
+printArray(b);
+	}
+}
+
+
