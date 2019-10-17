@@ -1,0 +1,55 @@
+Code : Interesting Alphabets
+
+Print the following pattern for the given number of rows.
+Pattern for N = 5
+
+E
+DE
+CDE
+BCDE
+ABCDE
+
+Input format : N (Total no. of rows)
+
+Output format : Pattern in N lines
+Sample Input :
+
+8
+
+Sample Output :
+
+H
+GH
+FGH
+EFGH
+DEFGH
+CDEFGH
+BCDEFGH
+ABCDEFGH
+
+_______________________________________________________________________________________________________
+
+
+import java.util.*;
+public class Solution {
+public static void main(String[] args) {
+//Your code goes here
+          Scanner scr = new Scanner(System.in);
+       int n = scr.nextInt();
+       int i = 1;
+      int num = n ;
+       while(i <= n ){
+           
+           int  j = 1 ;
+   int   Start =  'A'+num-1;    
+           while( j<=i ){
+           System.out.print((char)(Start));
+               j++;
+               Start++;
+           }
+           System.out.println();
+          num--;
+           i++;
+       }
+}
+}
