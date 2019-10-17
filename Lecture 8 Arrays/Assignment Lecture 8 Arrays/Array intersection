@@ -1,0 +1,75 @@
+Array intersection
+
+Given two random integer arrays of size m and n, print their intersection. That is, print all the elements that are present in both the given arrays.
+Input arrays can contain duplicate elements.
+Note : Order of elements are not important
+Input format :
+
+Line 1 : Array 1 Size
+Line 2 : Array 1 elements (separated by space)
+Line 3 : Array 2 Size
+Line 4 : Array 2 elements (separated by space)
+
+Output format :
+
+Print intersection elements in different lines
+
+Constraints :
+1 <= m, n <= 10^3
+Sample Input 1 :
+
+6
+2 6 8 5 4 3
+4
+2 3 4 7 
+
+Sample Output 1 :
+
+2 
+4 
+3
+
+Sample Input 2 :
+
+4
+2 6 1 2
+5
+1 2 3 4 2
+
+Sample Output 2 :
+
+2 
+2
+1
+
+
+______________________________________________________________________________________________________________
+
+
+
+import java.util.Scanner;
+
+public class Solution{	
+
+	public static void tripletSum(int[] arr, int x){
+		/* Your class should be named Solution
+		 * Don't write main().
+		 * Don't read input, it is passed as function argument.
+		 * Print output and don't return it.
+	 	 * Taking input is handled automatically.
+		*/ 
+        for(int i = 0 ; i<arr.length-2;i++){
+            for(int j = i+1 ; j<arr.length-1;j++){
+                for(int k = j+1 ; k<arr.length;k++){
+                    if(arr[i]+arr[j]+arr[k]==x)
+                    {
+                        int max = Math.max(arr[i], Math.max(arr[j], arr[k]));
+                        int min = Math.min(arr[i], Math.min(arr[j], arr[k]));
+                        int mid = x - max - min;
+                        System.out.println(min + " " + mid + " " + max);
+                    }
+                }
+            }
+        }
+    } 
+}
