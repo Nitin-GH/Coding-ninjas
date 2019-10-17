@@ -1,0 +1,74 @@
+Code : Triangle of Numbers
+
+Print the following pattern for the given number of rows.
+Pattern for N = 3
+
+       1
+     232
+   34543
+
+Input format :
+
+Integer N (Total no. of rows)
+
+Output format :
+
+Pattern in N lines
+
+Sample Input :
+
+5
+
+Sample Output :
+
+           1
+         232
+       34543
+     4567654
+   567898765
+
+
+
+
+
+_____________________________________________________________________________________________________________________
+
+import java.util.Scanner;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		/* Your class should be named Solution.
+	 	* Read input as specified in the question.
+	 	* Print output as specified in the question.
+		*/
+          Scanner scr = new Scanner(System.in);
+        int n = scr.nextInt();
+        int   i=1;
+        while(i <= n){
+            int j = 1;
+            while( j <= n-i){
+             System.out.print(" ");   
+             j++;
+            }
+             j = 1;
+            int k = i;
+            while(j<=i){
+                System.out.print(k);
+                k++;
+                j++;
+            }
+            k=k-2;
+            int l = 1 ;
+            while(l<=i-1){
+                System.out.print(k);
+                k--;
+                l++;
+            }
+            
+            System.out.println();
+            i++;
+            
+        }
+	}
+}
