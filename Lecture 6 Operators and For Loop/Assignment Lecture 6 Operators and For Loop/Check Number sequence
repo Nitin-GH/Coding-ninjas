@@ -71,7 +71,7 @@ public static void main(String[] args) {
     for(int i = 0 ; i<n-2;i++)
     { 
         
-        if(num[i]<num[i+1] && num[i+1]>num[i+2])
+        if(num[i]<=num[i+1] && num[i+1]>=num[i+2])//the case where two numbers are same also results false hence this change will pass all test cases
         {
             flag=false;
             break;
